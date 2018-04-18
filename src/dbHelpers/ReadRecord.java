@@ -33,7 +33,7 @@ public class ReadRecord {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 	
 	public void doRead(){

@@ -30,11 +30,13 @@ public class ValidationServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// get input and validate
 		String msg = "";
-		String url = "/page2.jsp";
+		String url = "/page2.jsp"; //TODO: Change to new target page
 		// username <= 15 characters
+		//sets new userName String value from whatever has parameter from request object (in this case index.jsp)
 		String userName = request.getParameter("userName");
+		
+		//if it is/not a name... appends to "msg" string
 		if (!Validator.isName(userName)){
 			msg += "The name has not been entered.<br />";
 			url = "/inputErrors.jsp";
@@ -45,15 +47,15 @@ public class ValidationServlet extends HttpServlet {
 		    request.setAttribute("userName", userName);
 		}
 		
-		// age is a number between 18 and 75
+		// age is a number between 0 and 100
 		try{
-			int age = Integer.parseInt(request.getParameter("age"));
-			if(age < 18 || age > 75){
-				msg += "The age should be between 18 and 75.<br />";
+			int gps = Integer.parseInt(request.getParameter("TODO: Find GPS location identifier"));
+			if(gps < 0 || gps > 100){
+				msg += "The gps location should be between 0 and 100.<br />";
 				url = "/inputErrors.jsp";
 			}
 		} catch (NumberFormatException nfe){
-			msg += "The age should entered as a number.<br />";
+			msg += "The gps location should entered as a number.<br />";
 			url = "/inputErrors.jsp";
 		}
 		
@@ -66,15 +68,6 @@ public class ValidationServlet extends HttpServlet {
 		    request.setAttribute("date", date);
 		}
 		
-		// email
-		String email = request.getParameter("email");
-		if (!Validator.isEmail(email)){
-			msg += "The email is not entered correctly.<br />";
-			url = "/inputErrors.jsp";
-		} else {
-		    request.setAttribute("email", email);
-		}
-		
 		// phone
 		String phone = request.getParameter("phone");
 		if (!Validator.isPhone(phone)){
@@ -82,15 +75,6 @@ public class ValidationServlet extends HttpServlet {
 			url = "/inputErrors.jsp";
 		} else {
 		    request.setAttribute("phone", phone);
-		}
-		
-		// url
-		String urlInput = request.getParameter("url");
-		if (!Validator.isURL(urlInput)){
-			msg += "The URL is not entered correctly.<br />";
-			urlInput = "/inputErrors.jsp";
-		} else {
-		    request.setAttribute("url", urlInput);
 		}
 		
 		request.setAttribute("msg", msg);
