@@ -4,13 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Incident Database</title>
+<title>Welcome!</title>
 </head>
 <body>
-<h1>Incident Database</h1>
+<h1>Welcome!</h1>
 
 <p>
-  <a href="read">Read the Incidents database</a>
+
+ <a href="read">Read the Incidents database</a> (for users only) <br />
+ <a href="readDrone">Read the Drone Inventory database</a> (for admins only) <br />
+ <a href="readEmergency">Read the Emergency Prevention database</a> (for admins only) <br />
+ <a href="readWitness">Read the Witness Reports database</a> (for admins only) <br />
+ 
 </p>
 
 </body>

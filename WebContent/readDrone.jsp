@@ -11,18 +11,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Incidents</title>
+<title>Drones</title>
 </head>
 <body>
 
-<h1>Incidents</h1>
+<h1>Drones</h1>
 
 <%= table %>
 
 <br />
-
-<br />
-<a href="add">Add Record</a>
 
 
 </body>
