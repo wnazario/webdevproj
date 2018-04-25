@@ -31,7 +31,7 @@ CREATE TABLE `incident` (
     `damage_to_drone` varchar(20) NOT NULL,
     `external_dmg` varchar(20) NOT NULL,
     `police_incidence_report` varchar(99) NOT NULL,
-    `emergency_phone_contact` varchar(10) NOT NULL,
+    `emergency_phone_contact` varchar(13) NOT NULL,
     PRIMARY KEY(`incidentID`),
     UNIQUE KEY `incidentID_UNIQUE` (`incidentID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -41,7 +41,7 @@ CREATE TABLE `incident` (
 --
 CREATE TABLE `emergencyPrevention` (
 	`emergencyID` int(11) NOT NULL AUTO_INCREMENT,
-    `emergencyContact` varchar(20) NOT NULL,
+    `emergencyContact` varchar(13) NOT NULL,
     `drone_operator` varchar(20) NOT NULL,
     `operator_actions` varchar(99) NOT NULL,
     `operator_comments` varchar(99) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `emergencyPrevention` (
 CREATE TABLE `incidentWitness`(
 	`witnessID` int(11) NOT NULL AUTO_INCREMENT,
     `name` varchar(20) NOT NULL,
-    `phone` varchar(10) NOT NULL,
+    `phone` varchar(13) NOT NULL,
     `email` varchar(20) NOT NULL,
     `address` varchar(30) NOT NULL,
     `witness_type` varchar(20) NOT NULL,
