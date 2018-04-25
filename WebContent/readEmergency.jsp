@@ -26,6 +26,8 @@
 
 <br />
 <a href="add2">Add Record</a>
+<br>
+<a href="start.jsp">Back</a>
 
 </div>
 </body>

@@ -22,6 +22,8 @@
 <%= table %>
 <br />
 <a href="add">Add Record</a>
+<br>
+<a href="start.jsp">Back</a>
 
 </div>
 </body>

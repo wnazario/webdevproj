@@ -21,6 +21,8 @@
 <%= table %>
 
 <br />
+<br>
+<a href="start.jsp">Back</a>
 
 </div>
 </body>
