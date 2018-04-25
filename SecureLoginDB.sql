@@ -15,4 +15,4 @@ CREATE TABLE `user` (
 
 -- insert one row into DB
 INSERT INTO `user` 
-VALUES (1,'SecureUser','10/w7o2juYBrGMh32/KbveULW9jk2tejpyUAD+uC6PE='),(2,'<script>alert(\"Hello\");</script>','XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=');
+VALUES (1,'SecureUser','8OTC92xYkW7CWPJGhRvqCR0U1CR6L8PhhpRGGxgW4Ts='),(2,'<script>alert(\"Hello\");</script>','XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=');
