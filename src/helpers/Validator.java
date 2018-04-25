@@ -2,7 +2,7 @@
 //public class Validator {
 package helpers;
 
-import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat;   
 import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,6 +30,17 @@ public class Validator {
 		return true;
 	}
 	
+///NOTE: FIX!!!!!!!!!!!!!!!!!
+	public static boolean isGPS(String gps) {
+		if (gps==null) {
+			return false;
+		}
+		else if (!gps.matches("[0-9]")) {
+			return false;
+		}
+		return true;
+	}
+	
 	//check to see if String parameter is a date
 	public static boolean isDate(String date) {
 	    if (date == null || !date.matches("\\d{4}-[01]\\d-[0-3]\\d")){
@@ -39,6 +50,21 @@ public class Validator {
 	    df.setLenient(false);
 	    try {
 	        df.parse(date);
+	        return true;
+	    } catch (ParseException ex) {
+	        return false;
+	    }
+	}
+	
+	//check to see if String parameter is a date
+	public static boolean isYear(String year) {
+	    if (year == null || !year.matches("[0-9]{4}")){
+	        return false;
+	    }
+	    SimpleDateFormat df = new SimpleDateFormat("yyyy");
+	    df.setLenient(false);
+	    try {
+	        df.parse(year);
 	        return true;
 	    } catch (ParseException ex) {
 	        return false;
