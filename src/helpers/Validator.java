@@ -43,6 +43,7 @@ public class Validator {
 	
 	//check to see if String parameter is a date
 	public static boolean isDate(String date) {
+		//YYYY-MM-DD
 	    if (date == null || !date.matches("\\d{4}-[01]\\d-[0-3]\\d")){
 	        return false;
 	    }
@@ -80,7 +81,7 @@ public class Validator {
 	
 	//checks to see if String parameter is a phone number
 	public static boolean isPhone(String phoneStr) {
-		Pattern phoneRegex = Pattern.compile("^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$", Pattern.CASE_INSENSITIVE);
+		Pattern phoneRegex = Pattern.compile("^[0-9]{3}-[0-9]{3}-[0-9]{4}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = phoneRegex.matcher(phoneStr);
 		return matcher.find();
 	}

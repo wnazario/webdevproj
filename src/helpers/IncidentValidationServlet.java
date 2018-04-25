@@ -44,6 +44,15 @@ public class IncidentValidationServlet extends HttpServlet {
 			 request.setAttribute("gps", gps);
 			}
 		
+		// emergency phone contact
+			String contact = request.getParameter("emergency_phone_contact");
+			if (!Validator.isPhone(contact)){
+				msg += "The phone number is not entered correctly.<br />";
+				url = "/inputErrors.jsp";
+			} else {
+				request.setAttribute("emergency_phone_contact", contact);
+			}
+		
 		request.setAttribute("msg", msg);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

@@ -65,7 +65,14 @@ public class WitnessValidationUpdateServlet extends HttpServlet {
 		    request.setAttribute("email", email);
 		}
 		
-		
+		// emergency contact
+				String contact = request.getParameter("emergency_contact");
+				if (!Validator.isPhone(contact)){
+					msg += "The emergency contact phone number is not entered correctly.<br />";
+					url = "/inputErrors.jsp";
+				} else {
+					 request.setAttribute("emergency_contact", contact);
+					}
 		
 		request.setAttribute("msg", msg);
 		

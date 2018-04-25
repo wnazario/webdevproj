@@ -44,6 +44,15 @@ public class DroneValidationServlet extends HttpServlet {
 			 request.setAttribute("year", year);
 			}
 		
+		// date of service
+		String service = request.getParameter("last_service");
+		if (!Validator.isDate(service)){
+			msg += "The date of last service is not entered correctly.<br />";
+			url = "/inputErrors.jsp";
+		} else {
+			request.setAttribute("last_service", service);
+			}
+		
 		request.setAttribute("msg", msg);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);

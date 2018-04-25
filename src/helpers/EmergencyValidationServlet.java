@@ -32,20 +32,16 @@ public class EmergencyValidationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String msg = "";
 		String url = "/addEmergency";
-		// name <= 15 characters
-		//sets new userName String value from whatever has parameter from request object (in this case index.jsp)
-		String contact = request.getParameter("emergencyContact");
-				
-		//if it is/not a name... appends to "msg" string
-		if (!Validator.isName(contact)){
-			msg += "The name has not been entered.<br />";
-			url = "/inputErrors.jsp";
-		} else if (!Validator.isShortName(contact)){
-			msg += "The name should be no greater than 15 characters.<br />";
-			url = "/inputErrors.jsp";
-		} else {
-				request.setAttribute("emergencyContact", contact);
-			}
+
+		
+		// phone
+				String contact = request.getParameter("emergencyContact");
+				if (!Validator.isPhone(contact)){
+					msg += "The phone number is not entered correctly.<br />";
+					url = "/inputErrors.jsp";
+				} else {
+					 request.setAttribute("emergencyContact", contact);
+					}
 		
 		request.setAttribute("msg", msg);
 		

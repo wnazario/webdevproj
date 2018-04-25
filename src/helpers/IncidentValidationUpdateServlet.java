@@ -34,13 +34,22 @@ public class IncidentValidationUpdateServlet extends HttpServlet {
 		String url = "/updateIncident";
 		
 		// gps
-			String gps = request.getParameter("GPS_location");
-			if (!Validator.isGPS(gps)){
-				msg += "The gps is not entered correctly.<br />";
-				url = "/inputErrors.jsp";
-			} else {
-				 request.setAttribute("gps", gps);
-				}
+				String gps = request.getParameter("GPS_location");
+				if (!Validator.isGPS(gps)){
+					msg += "The gps is not entered correctly.<br />";
+					url = "/inputErrors.jsp";
+				} else {
+					 request.setAttribute("gps", gps);
+					}
+				
+				// emergency phone contact
+					String contact = request.getParameter("emergency_phone_contact");
+					if (!Validator.isPhone(contact)){
+						msg += "The phone number is not entered correctly.<br />";
+						url = "/inputErrors.jsp";
+					} else {
+						request.setAttribute("emergency_phone_contact", contact);
+					}
 		
 		
 		
