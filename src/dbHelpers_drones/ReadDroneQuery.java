@@ -53,7 +53,17 @@ public class ReadDroneQuery {
 	
 	public String getHTMLTable(){
 		String table ="";
-		table += "<table border=1>";
+		table += "<table border=1>"
+				+ "<tr bgcolor='#a3c1ad'>"
+				+ "<td><b>droneID</b></td>"
+				+ "<td><b>make</b></td>"
+				+ "<td><b>model</b></td>"
+				+ "<td><b>year</b></td>"
+				+ "<td><b>service_loc</b></td>"
+				+ "<td><b>VIN</b></td>"
+				+ "<td><b>faa_lic</b></td>"
+				+ "<td><b>Actions</b></td>"
+				+ "</tr>";
 		
 		try {
 			while(this.results.next()){

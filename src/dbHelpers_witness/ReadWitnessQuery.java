@@ -53,7 +53,16 @@ public class ReadWitnessQuery {
 	
 	public String getHTMLTable(){
 		String table ="";
-		table += "<table border=1>";
+		table += "<table border=1>"
+				+ "<tr bgcolor='#a3c1ad'>"
+				+ "<td><b>Name</b></td>"
+				+ "<td><b>Phone</b></td>"
+				+ "<td><b>E-mail</b></td>"
+				+ "<td><b>Witness Type</b></td>"
+				+ "<td><b>Witness Report</b></td>"
+				+ "<td><b>Emergency Contact</b></td>"
+				+ "<td><b>Actions</b></td>"
+				+ "</tr>";
 		
 		try {
 			while(this.results.next()){

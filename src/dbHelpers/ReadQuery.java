@@ -53,7 +53,17 @@ public class ReadQuery {
 	
 	public String getHTMLTable(){
 		String table ="";
-		table += "<table border=1>";
+		table += "<table border=1>"
+				+ "<tr bgcolor='#a3c1ad'>"
+				+ "<td><b>Cause of Failure</b></td>"
+				+ "<td><b>GPS Location</b></td>"
+				+ "<td><b>Reported By</b></td>"
+				+ "<td><b>Damage to Drone</b></td>"
+				+ "<td><b>External Damage</b></td>"
+				+ "<td><b>Police Incidence Report</b></td>"
+				+ "<td><b>Emergency Phone Contact</b></td>"
+				+ "<td><b>Actions</b></td>"
+				+ "</tr>";
 		
 		try {
 			while(this.results.next()){

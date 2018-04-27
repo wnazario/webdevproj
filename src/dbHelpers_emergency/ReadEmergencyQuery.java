@@ -53,7 +53,14 @@ public class ReadEmergencyQuery {
 	
 	public String getHTMLTable(){
 		String table ="";
-		table += "<table border=1>";
+		table += "<table border=1>"
+				+ "<tr bgcolor='#a3c1ad'>"
+				+ "<td><b>Emergency Contact</b></td>"
+				+ "<td><b>Drone Operator</b></td>"
+				+ "<td><b>Operator Actions</b></td>"
+				+ "<td><b>Operator Comments</b></td>"
+				+ "<td><b>Actions</b></td>"
+				+ "</tr>";
 		
 		try {
 			while(this.results.next()){
